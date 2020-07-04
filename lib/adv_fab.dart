@@ -296,7 +296,8 @@ class _AdvFabState extends State<AdvFab> with SingleTickerProviderStateMixin {
                 color: animatedColor.value,
                 borderRadius: widget.useAsNavigationBar
                     ? BorderRadius.circular(40)
-                    : BorderRadius.circular(widget.expandedBorderRadius),
+                    : isExpanding ? BorderRadius.circular(60)
+                      : BorderRadius.circular(widget.expandedBorderRadius),
                 boxShadow: widget.useElevation
                     ? [
                         BoxShadow(
