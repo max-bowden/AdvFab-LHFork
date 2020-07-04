@@ -162,6 +162,10 @@ class AdvFab extends StatefulWidget {
   /// Set to false by default; use it for Debuging,
   /// warnings and errors will always be printed
   final bool showLogs;
+
+  // set the radius used for the expanded container border radius
+  final double expandedBorderRadius;
+
   const AdvFab({
     Key key,
     this.tweenColorAnimationDuration = const Duration(milliseconds: 250),
@@ -184,6 +188,7 @@ class AdvFab extends StatefulWidget {
     this.showLogs = false,
     this.spaceBarWidget,
     this.controller,
+    this.expandedBorderRadius
   }) : super(key: key);
   @override
   _AdvFabState createState() => _AdvFabState();
@@ -291,9 +296,7 @@ class _AdvFabState extends State<AdvFab> with SingleTickerProviderStateMixin {
                 color: animatedColor.value,
                 borderRadius: widget.useAsNavigationBar
                     ? BorderRadius.circular(40)
-                    : isExpanding
-                        ? BorderRadius.circular(40)
-                        : BorderRadius.circular(60),
+                    : BorderRadius.circular(widget.expandedBorderRadius),
                 boxShadow: widget.useElevation
                     ? [
                         BoxShadow(
