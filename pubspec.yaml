@@ -1,6 +1,6 @@
 name: adv_fab
 description: A floating action button that expands itself to reveal its hidden widget. it can also be used as a NavigationBar or a floatingSpaceBar 
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/max-bowden/AdvFab-LHFork
 
 environment:
