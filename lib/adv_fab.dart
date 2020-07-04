@@ -188,7 +188,7 @@ class AdvFab extends StatefulWidget {
     this.showLogs = false,
     this.spaceBarWidget,
     this.controller,
-    this.expandedBorderRadius
+    this.expandedBorderRadius = 40
   }) : super(key: key);
   @override
   _AdvFabState createState() => _AdvFabState();
