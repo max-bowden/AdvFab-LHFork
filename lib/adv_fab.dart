@@ -115,8 +115,8 @@ class AdvFab extends StatefulWidget {
 
   //==for the floating action button==\\
   ///The width the floating Action Button  will occupy on the screen once expended
-  ///to rectangular form ( in percentage )
-  final double floatingActionButtonExpendedWidth;
+  ///to rectangular form ( absolute )
+  final int floatingActionButtonExpendedWidth;
 
   ///Defines the action to be performed once the floating Action Button is pressed
   final Function onFloatingActionButtonTapped;
@@ -176,7 +176,7 @@ class AdvFab extends StatefulWidget {
     this.navigationBarIconInactiveColor = Colors.grey,
     this.navigationBarIconActiveColor = Colors.blue,
     this.floatingActionButtonIcon = Icons.warning,
-    this.floatingActionButtonExpendedWidth = 50,
+    this.floatingActionButtonExpendedWidth = 100,
     this.floatingSpaceBarContainerWidth = 92,
     this.useAsFloatingActionButton = true,
     this.collapsedColor = Colors.black12,
@@ -278,8 +278,7 @@ class _AdvFabState extends State<AdvFab> with SingleTickerProviderStateMixin {
                     //if no , we check if we need to use circular shape , is yes we also check if we are expanding
                     widget.useAsFloatingActionButton
                         ? isExpanding
-                            ? (MediaQuery.of(context).size.width / 100) *
-                                widget.floatingActionButtonExpendedWidth
+                            ? widget.floatingActionButtonExpendedWidth
                             : (MediaQuery.of(context).size.width / 100) * 16.65
                         :
                         //if no, we check if the spacebar has to be used
