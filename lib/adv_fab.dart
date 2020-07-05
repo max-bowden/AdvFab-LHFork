@@ -116,7 +116,7 @@ class AdvFab extends StatefulWidget {
   //==for the floating action button==\\
   ///The width the floating Action Button  will occupy on the screen once expended
   ///to rectangular form ( absolute )
-  final int floatingActionButtonExpendedWidth;
+  final double floatingActionButtonExpendedWidth;
 
   ///Defines the action to be performed once the floating Action Button is pressed
   final Function onFloatingActionButtonTapped;
