@@ -25,6 +25,7 @@ class AdvFabController {
   //floating action button as a bottom navigation bar
   Function _switchTab;
 
+  /// Absolute height of the expanded FAB
   double _heightToExpandTo;
   Widget _expandedWidget;
   MainAxisAlignment _expendedContainerMainAxisAlignment;
@@ -288,8 +289,7 @@ class _AdvFabState extends State<AdvFab> with SingleTickerProviderStateMixin {
                             : (MediaQuery.of(context).size.width / 100) *
                                 widget.floatingSpaceBarContainerWidth,
             height: isExpanding
-                ? (MediaQuery.of(context).size.height / 100) *
-                    widget.controller._heightToExpandTo
+                ? widget.controller._heightToExpandTo
                 : (MediaQuery.of(context).size.height / 100) * 7.5,
             decoration: BoxDecoration(
                 color: animatedColor.value,
