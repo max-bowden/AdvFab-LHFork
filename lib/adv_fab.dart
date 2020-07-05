@@ -67,18 +67,8 @@ class AdvFabController {
       _expendedColor = expendedBackgroundColor;
     }
 
-    // we actually remove the widget once we decide to configure it again
-    if (forceCustomHeight == false) {
-      if (heightToExpandTo < 15 || heightToExpandTo > 80) {
-        print(
-            '\n!==[AdvFab WARNING]==!\n[== The height percentage your provided is not withing the acceptable range [15...80], this might cause unexpected behaviour ==]\n[== Setting up default value of 15% to the screen height  ==]\n!==[NOTE]==!\n[== Set "forceCustomHeight" to true if you really want to use values outside the range ==]');
-        _heightToExpandTo = 15;
-      } else {
-        _heightToExpandTo = heightToExpandTo;
-      }
-    } else {
-      _heightToExpandTo = heightToExpandTo;
-    }
+    _heightToExpandTo = heightToExpandTo;
+
     if (_expandedWidget != null) {
       _expandedWidget = null;
       _expandedWidget = withChild;
